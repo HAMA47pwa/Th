@@ -1,7 +1,8 @@
 :root{
-  --brand:#d62427; --brand-ink:#a31b1e;
-  --ink:#0b0d10; --muted:#6b7280; --muted2:#9aa3af;
-  --bg:#f6f7f9; --card:#ffffff; --line:#e5e5e5; --line-soft:#eef1f5;
+  --brand:#D62427;
+  --ink:#111; --muted:#666; --muted2:#9aa3af;
+  --bg:#f6f7f9; --card:#fff;
+  --line:#e5e5e5; --line-soft:#eef1f5;
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
@@ -9,29 +10,29 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
   font-size:16px;line-height:1.45;letter-spacing:.2px}
 body, .amount, .balance .num{font-variant-numeric:tabular-nums}
 
-/* ヘッダー */
-.appbar{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;height:48px;background:#fff}
-.title{margin:0;text-align:center;font-weight:700;font-size:16px;letter-spacing:.1px}
+/* ヘッダー（白／？赤枠） */
+.appbar{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;height:48px;background:#fff;border-bottom:1px solid #f0f0f0}
+.title{margin:0;text-align:center;font-weight:600;font-size:16px;letter-spacing:.05px}
 .icon-btn{appearance:none;background:none;border:none;height:48px;width:48px;font-size:22px;color:#6b7280}
-.icon-btn.help{width:32px;height:32px;justify-self:end;margin-right:10px;border-radius:999px;
+.icon-btn.help{width:30px;height:30px;justify-self:end;margin-right:10px;border-radius:999px;
   display:grid;place-items:center;font-size:15px;color:var(--brand);border:2.5px solid var(--brand);background:#fff}
 
 /* 口座情報 */
 .acct-summary{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;
-  padding:16px;background:#fff;border-bottom:1px solid var(--line)}
-.acct-meta .line1{font-size:14px;color:#374151}
+  padding:16px 16px 18px;background:#fff;border-bottom:1px solid var(--line)}
+.acct-meta .line1{font-size:14px;color:#4b5563}
 .acct-meta .line2{font-size:13px;color:var(--muted2);margin-top:2px}
 .balance{font-weight:600;font-size:24px;color:var(--ink);white-space:nowrap}
 .balance .yen{font-weight:600;font-size:12px;color:#6b7280;margin-left:6px}
 
-/* 条件バー */
-.cond{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px 16px 8px}
-.cond-caption{font-size:13px;color:#333;font-weight:700;margin:6px 0 6px}
+/* 条件バー（余白広め／太字） */
+.cond{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 16px 14px}
+.cond-caption{font-size:14px;color:#333;font-weight:700;margin:0 0 10px}
 .pill{width:100%;display:flex;align-items:center;gap:12px;justify-content:center;
-  border:1.6px solid #dadde2;border-radius:10px;background:#fff;padding:14px 16px;
-  font-weight:800;color:#2c3440;font-size:16px}
+  border:1.6px solid #dadde2;border-radius:10px;background:#fff;padding:15px 16px;
+  font-weight:700;color:#111;font-size:16px}
 .pill .loupe{width:22px;height:22px;color:var(--brand);flex:0 0 22px;display:block;transform:translateY(-1px)}
-.after-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;color:#6b7280}
+.after-row{display:flex;align-items:center;justify-content:space-between;margin-top:10px;color:#6b7280}
 .after-label{font-size:14px}
 
 /* iOS風スイッチ */
@@ -43,19 +44,16 @@ body, .amount, .balance .num{font-variant-numeric:tabular-nums}
 .switch input:checked + .slider:before{transform:translateX(20px)}
 
 /* 年見出し */
-.year-head{padding:12px 16px;background:#FAFBFC;color:#6b7280;font-weight:700;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.year-head{padding:12px 16px;background:#FAFAFA;color:#6b7280;font-weight:700;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 
 /* 取引リスト */
 .tx-list{list-style:none;margin:0;padding:0;background:#fff}
 .tx{display:grid;grid-template-columns:52px 1fr auto;align-items:center;
-  padding:14px 16px;border-bottom:1px solid var(--line)}
+  padding:16px;border-bottom:1px solid var(--line)}
 .tx .date{font-size:12px;color:var(--muted2)}
 .tx .title{font-size:15px;color:#111827;font-weight:600}
-.tx .amount{font-weight:700;font-size:17px;white-space:nowrap;letter-spacing:.1px}
+.tx .amount{font-weight:700;font-size:17px;white-space:nowrap;letter-spacing:.1px;color:#111}
 .tx .amount .yen{font-weight:700;font-size:12px;color:#6b7280;margin-left:4px}
 .tx .amount.minus{color:var(--brand)}
-.tx .amount.plus{color:#2e7d32}
+.tx .amount.plus{color:#128a38}
 .tx .after{position:absolute;right:16px;bottom:6px;font-size:12px;color:#9aa2ad}
-
-/* フッター */
-.version{display:none}
