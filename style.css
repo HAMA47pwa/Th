@@ -98,49 +98,43 @@ body {
   margin: 0 0 6px;
 }
 
-/* 「口座・期間等を変更」ボタン */
-.search-btn {
-  position: relative;
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  border-radius: 10px;
-  font-size: 15px;
-  width: 100%;
-  padding: 10px 12px 10px 42px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  color: var(--brand-ink);
-  margin: 8px 0;
-}
-.search-btn::first-letter {
-  color: transparent;
+/* 「口座・期間等を変更」ボタン：中央寄せ＆黒文字 */
+.search-btn{
+  background:#fff;
+  border:1px solid #e5e5e5;
+  border-radius:10px;
+  width:100%;
+  padding:10px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;     /* ← 中央寄せ */
+  gap:8px;                    /* アイコンと文字の間隔 */
+  margin:8px 0;
+  color:#111;                 /* ← 文字は黒 */
+  font-size:15px;
 }
 
-/* 虫眼鏡アイコン */
-.search-btn::before {
-  content: "";
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
-  border: 2px solid var(--brand);
-  border-radius: 50%;
-  box-sizing: border-box;
+/* アイコン（虫眼鏡）をCSSで描画：赤 */
+.search-btn .icon{
+  position:relative;
+  width:18px; height:18px;
+  flex:0 0 18px;
 }
-.search-btn::after {
-  content: "";
-  position: absolute;
-  left: 28px;
-  top: calc(50% + 4px);
-  width: 9px;
-  height: 2px;
-  background: var(--brand);
-  transform: rotate(45deg);
-  transform-origin: left center;
-  border-radius: 1px;
+.search-btn .icon::before{           /* 丸 */
+  content:"";
+  position:absolute; inset:0;
+  border:2px solid var(--brand);
+  border-radius:50%;
+  box-sizing:border-box;
+}
+.search-btn .icon::after{            /* 取っ手 */
+  content:"";
+  position:absolute;
+  right:-1px; bottom:-2px;
+  width:9px; height:2px;
+  background:var(--brand);
+  transform:rotate(45deg);
+  border-radius:1px;
 }
 
 .transactions {
