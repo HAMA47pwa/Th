@@ -22,7 +22,6 @@ body {
   justify-content: space-between;
   padding: 12px 12px 10px 12px;
   background: var(--card);
-  border-bottom: 1px solid var(--line);
 }
 
 .header h1 {
