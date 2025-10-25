@@ -143,20 +143,6 @@ body {
   border-radius: 1px;
 }
 
-.search-btn {
-  background: none;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  font-size: 15px;
-  width: 100%;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--brand-ink);
-  margin: 8px 0;
-}
-
 .transactions {
   background: var(--card);
   margin-top: 8px;
