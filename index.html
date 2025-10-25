@@ -21,13 +21,20 @@
   </section>
 
   <section class="filter">
-    <p>表示条件：2025/09/25 - 2025/10/24, 全取引</p>
-    <button class="search-btn">口座・期間等を変更</button>
-    <label class="toggle">
-      <input type="checkbox" />
-      取引後残高
-    </label>
-  </section>
+  <p>表示条件：2025/09/25 - 2025/10/24, 全取引</p>
+
+  <!-- アイコン用spanを追加して中央寄せできる形に -->
+  <button class="search-btn">
+    <span class="icon" aria-hidden="true"></span>
+    <span class="txt">口座・期間等を変更</span>
+  </button>
+
+  <!-- テキストをspanで包み、スイッチを右寄せしやすく -->
+  <label class="toggle">
+    <span>取引後残高</span>
+    <input type="checkbox" />
+  </label>
+</section>
 
   <section class="transactions">
     <h2>2025年</h2>
