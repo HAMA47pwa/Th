@@ -1,4 +1,45 @@
 <!DOCTYPE html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="refresh" content="0; url=history.html"><title>Redirect</title></head>
-<body>Redirecting…</body></html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>入出金明細</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <button class="icon-btn back">←</button>
+    <h1>入出金明細</h1>
+    <button class="icon-btn help">？</button>
+  </header>
+
+  <section class="account">
+    <div class="branch">名古屋営業部</div>
+    <div class="account-type">普通　□□□□□□□</div>
+    <div class="balance">449,029<span>円</span></div>
+  </section>
+
+  <section class="filter">
+    <p>表示条件：2025/09/25 - 2025/10/24, 全取引</p>
+    <button class="search-btn">🔍　口座・期間等を変更</button>
+    <label class="toggle">
+      <input type="checkbox" />
+      取引後残高
+    </label>
+  </section>
+
+  <section class="transactions">
+    <h2>2025年</h2>
+    <ul>
+      <li><span class="date">10/24</span><span class="label">給与</span><span class="amount plus">423,704円</span></li>
+      <li><span class="date">10/23</span><span class="label">振込２｜（　）</span><span class="amount">19,360円</span></li>
+      <li><span class="date">10/10</span><span class="label">手数料</span><span class="amount minus">-110円</span></li>
+      <li><span class="date">10/10</span><span class="label">カード</span><span class="amount minus">-33,000円</span></li>
+      <li><span class="date">10/10</span><span class="label">振込１｜クワナシジドウテアテ</span><span class="amount">30,000円</span></li>
+    </ul>
+  </section>
+
+  <footer class="footer">ver.1.2.0 (History PWA v8)</footer>
+  <script src="script.js"></script>
+</body>
+</html>

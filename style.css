@@ -1,24 +1,154 @@
-:root{--brand:#D62427;--ink:#111;--muted:#666;--bg:#f6f7f9;--line:#e5e5e5;}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#fff;color:var(--ink)}
-.appbar{display:grid;grid-template-columns:56px 1fr 56px;align-items:center;height:52px;background:#fff;border-bottom:1px solid #f0f0f0}
-.icon-btn{appearance:none;background:none;border:none;display:grid;place-items:center;color:#6b7280;}
-.icon-btn.back{font-size:30px;font-weight:300;color:#111;transform:translateY(-1px);}
-.icon-btn.help{width:26px;height:26px;justify-self:end;margin-right:16px;border-radius:50%;
-  border:2px solid var(--brand);color:var(--brand);font-size:15px;font-weight:500;line-height:1;display:flex;align-items:center;justify-content:center;}
-.title{text-align:center;font-size:16px;font-weight:600;margin:0}
-.acct-summary{display:flex;justify-content:space-between;align-items:flex-start;padding:16px;border-bottom:1px solid var(--line)}
-.acct-meta .line1{font-size:14px;color:#4b5563}.acct-meta .line2{font-size:13px;color:#9aa3af;margin-top:2px}
-.balance{font-weight:600;font-size:24px}.balance .yen{font-size:12px;margin-left:4px;color:#6b7280}
-.cond{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 16px 14px}
-.cond-caption{font-size:14px;font-weight:700;margin-bottom:10px}
-.pill{width:100%;display:flex;align-items:center;gap:12px;justify-content:center;border:1.6px solid #dadde2;border-radius:10px;padding:15px 16px;font-weight:700;font-size:16px;color:#111;}
-.pill .loupe{width:22px;height:22px;color:var(--brand)}
-.after-row{display:flex;align-items:center;justify-content:space-between;margin-top:10px;color:#6b7280}
-.switch{position:relative;display:inline-block;width:48px;height:28px}
-.switch input{opacity:0;width:0;height:0}
-.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#e5e5e5;border-radius:999px;transition:.2s}
-.slider:before{content:"";position:absolute;height:24px;width:24px;left:2px;top:2px;background:#fff;border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,.15);transition:.2s}
-.switch input:checked + .slider{background:var(--brand)}.switch input:checked + .slider:before{transform:translateX(20px)}
-.year-head{padding:12px 16px;background:#FAFAFA;color:#6b7280;font-weight:700;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.tx-list{list-style:none;margin:0;padding:0}.tx{display:grid;grid-template-columns:52px 1fr auto;align-items:center;padding:16px;border-bottom:1px solid var(--line)}
-.tx .date{font-size:12px;color:#9aa3af}.tx .title{font-size:15px;font-weight:600}.tx .amount{font-weight:700;font-size:17px}.tx .amount.minus{color:var(--brand)}.tx .amount.plus{color:#128a38}
+:root {
+  --brand: #d62427;
+  --brand-ink: #a23328;
+  --ink: #1c2026;
+  --muted: #7a848e;
+  --bg: #f6f6f7;
+  --card: #ffffff;
+  --line: #e9edf3;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 12px 10px 12px;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+
+.header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.icon-btn {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.icon-btn.back {
+  font-size: 20px;
+  color: var(--ink);
+  width: 30px;
+  height: 30px;
+}
+
+.icon-btn.help {
+  width: 26px;
+  height: 26px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 2px solid var(--brand);
+  color: var(--brand);
+  font-size: 13.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  margin-right: 16px;
+}
+
+.account {
+  background: var(--card);
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.account .branch {
+  font-size: 15px;
+}
+.account .account-type {
+  color: var(--muted);
+  font-size: 13px;
+}
+.account .balance {
+  text-align: right;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.account .balance span {
+  font-size: 14px;
+}
+
+.filter {
+  background: var(--card);
+  margin-top: 4px;
+  padding: 12px 16px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--line);
+}
+
+.search-btn {
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 15px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-ink);
+  margin: 8px 0;
+}
+
+.transactions {
+  background: var(--card);
+  margin-top: 8px;
+}
+.transactions h2 {
+  background: var(--bg);
+  font-size: 14px;
+  padding: 8px 16px;
+  color: var(--muted);
+}
+.transactions ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.transactions li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.transactions .date {
+  color: var(--muted);
+  font-size: 14px;
+  width: 48px;
+}
+.transactions .label {
+  flex: 1;
+  font-size: 15px;
+}
+.transactions .amount {
+  font-size: 15px;
+  font-weight: 600;
+}
+.transactions .plus {
+  color: #008000;
+}
+.transactions .minus {
+  color: var(--brand);
+}
+
+.footer {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  padding: 12px;
+}
