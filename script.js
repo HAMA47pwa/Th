@@ -1,1 +1,1 @@
-console.log('v8 loaded: fixed for Safari true circle ? button');
+console.log('v9 loaded: PWA re-enabled.');

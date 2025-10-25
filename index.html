@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>入出金明細</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
   <header class="header">
@@ -39,7 +40,15 @@
     </ul>
   </section>
 
-  <footer class="footer">ver.1.2.0 (History PWA v8)</footer>
+  <footer class="footer">v9 PWA enabled</footer>
+
   <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js');
+      });
+    }
+  </script>
 </body>
 </html>
