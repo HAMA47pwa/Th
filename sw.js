@@ -1,4 +1,1 @@
-const CACHE='history-demo-v6';
-const ASSETS=['./','./history.html','./style.css'];
-self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)))});
-self.addEventListener('fetch',e=>{e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request)))});
+self.addEventListener('install',e=>e.waitUntil(caches.open('v7').then(c=>c.addAll(['./','./history.html']))));self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));
