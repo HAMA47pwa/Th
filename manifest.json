@@ -1,6 +1,6 @@
 {
-  "name": "Bank History Demo",
-  "short_name": "BHistory",
+  "name": "三菱UFJ銀行",
+  "short_name": "三菱UFJ銀行",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
