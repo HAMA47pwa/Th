@@ -83,11 +83,64 @@ body {
 }
 
 .filter {
-  background: var(--card);
-  margin-top: 4px;
-  padding: 12px 16px;
+  background: #fafafa;            /* 薄いグレー背景 */
+  border: 1px solid #e5e5e5;      /* 枠線 */
+  border-radius: 10px;            /* 角丸 */
+  padding: 10px 14px;
+  margin: 10px 12px 12px;         /* 周囲の余白 */
   font-size: 13px;
-  border-bottom: 1px solid var(--line);
+}
+
+/* 表示条件：〜 の文字 */
+.filter p {
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 6px;
+}
+
+/* 「口座・期間等を変更」ボタン */
+.search-btn {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  font-size: 15px;
+  width: 100%;
+  padding: 10px 12px 10px 42px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--brand-ink);
+  margin: 8px 0;
+}
+.search-btn::first-letter {
+  color: transparent;
+}
+
+/* 虫眼鏡アイコン */
+.search-btn::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--brand);
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.search-btn::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: calc(50% + 4px);
+  width: 9px;
+  height: 2px;
+  background: var(--brand);
+  transform: rotate(45deg);
+  transform-origin: left center;
+  border-radius: 1px;
 }
 
 .search-btn {
